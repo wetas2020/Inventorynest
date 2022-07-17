@@ -1,7 +1,14 @@
-import './bootstrap';
+import "./bootstrap";
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-import Alpine from 'alpinejs';
+Vue.use(VueRouter);
 
-window.Alpine = Alpine;
+Vue.component(
+    "example-component",
+    require("./components/ExampleComponent.vue").default
+);
 
-Alpine.start();
+const app = new Vue({
+    el: "#app",
+});
